@@ -20,16 +20,16 @@ from markdown import markdown
 
 templates = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
 
-feed_root = 'https://blog.goeswhere.com'
+feed_root = 'https://conor.net/radar'
 fg = FeedGenerator()
 fg.id(feed_root)
-fg.title('Faux\' Blog')
-fg.author({'name': 'Chris West (Faux)'})
-fg.language('en')
+fg.title('Under The Radar')
+fg.author({'name': 'Conor Keegan (EI8GVB)'})
+fg.language('en-ie')
 fg.link(href=feed_root, rel='alternate')
-fg.description('Faux\' (mostly) technical blog')
+fg.description('Assorted writings about radio and technology, especially stealth or under-the-radar tech.')
 
-tz = pytz.timezone('Europe/London')
+tz = pytz.timezone('Europe/Dublin')
 
 Item = namedtuple('Item', ['title', 'slug', 'date', 'content', 'mtime'])
 
@@ -67,9 +67,9 @@ def url_of(item):
 
 def write_page(path, template, title, **args):
     if not title:
-        title = 'Faux\' blog'
+        title = 'Under The Radar'
     else:
-        title = 'Faux\' blog: ' + title
+        title = 'Under The Radar: ' + title
 
     with open_out(path) as f:
         f.write(

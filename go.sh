@@ -2,5 +2,5 @@
 set -eu
 rm -rf out
 ./make.py
-rsync -a --delete out/ /srv/blog.goeswhere.com
-rsync -a --delete files /srv/blog.goeswhere.com/
+rsync -a --delete out/ /srv/conor.net/htdocs/radar
+rsync -a --delete files /srv/conor.net/htdocs/radar/
